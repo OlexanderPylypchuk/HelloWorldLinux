@@ -10,7 +10,7 @@ EXPOSE 8080
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["HelloWorldLinux/HelloWorldLinux.csproj", "./"]
+COPY ["HelloWorldLinux.csproj", "./"]
 RUN dotnet restore "./HelloWorldLinux.csproj"
 COPY . .
 WORKDIR "/src/HelloWorldLinux"
