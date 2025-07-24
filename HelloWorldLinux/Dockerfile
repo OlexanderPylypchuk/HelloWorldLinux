@@ -14,7 +14,7 @@ COPY ["HelloWorldLinux.csproj", "./"]
 RUN dotnet restore "./HelloWorldLinux.csproj"
 COPY . .
 WORKDIR "/src/HelloWorldLinux"
-RUN dotnet build "./HelloWorldLinux.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet build "HelloWorldLinux.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
